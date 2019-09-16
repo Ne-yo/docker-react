@@ -7,3 +7,16 @@ before_install:
     
 script:
     - docker run sdidassou/docker-react npm run test -- --coverage
+    
+deploy:
+    provider: elesticbeanstalk
+    region: ""
+    app: "docker-react"
+    env: ""
+    bucket_name: "elestic ....."
+    bucket_path: "docker-react"
+    on:
+        branch: master
+    access_key_id: $Name_in travis
+    secret_access_key:
+        secure: "§AWS_Name_in_travis"
